@@ -1,6 +1,9 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_application_2/pages/home_page.dart';
+
+import 'login_page.dart';
 
 class WelcomePage extends StatelessWidget {
   @override
@@ -45,8 +48,12 @@ class WelcomePage extends StatelessWidget {
             Container(
               width: 350.0,
               height: 45.0,
+              margin: EdgeInsets.only(top: 40.0),
               child: RaisedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => LoginPage()));
+                },
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20.0)),
                 color: Theme.of(context).accentColor,
@@ -64,14 +71,15 @@ class WelcomePage extends StatelessWidget {
                 onPressed: () {},
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20.0)),
+                // ignore: deprecated_member_use
                 color: Theme.of(context).buttonColor,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Image(
                       image: AssetImage('images/facebook_logo_1.png'),
-                      width: 20.0,
-                      height: 20.0,
+                      width: 25.0,
+                      height: 25.0,
                     ),
                     Container(
                       margin: EdgeInsets.only(left: 10.0),

@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_2/pages/login_page.dart';
 import 'package:flutter_application_2/routes/routes.dart';
-//import 'package:flutter_application_2/pages/home_page.dart';
 
 void main() async {
   runApp(MyApp());
