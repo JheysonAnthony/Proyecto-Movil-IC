@@ -1,7 +1,6 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_application_2/pages/home_page.dart';
 
 import 'login_page.dart';
 
@@ -71,7 +70,6 @@ class WelcomePage extends StatelessWidget {
                 onPressed: () {},
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20.0)),
-                // ignore: deprecated_member_use
                 color: Theme.of(context).buttonColor,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
