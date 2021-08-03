@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+
 //Tabs
-import 'package:flutter_application_2/tabs/explore_tab.dart';
-import 'package:flutter_application_2/tabs/myorder_tab.dart';
-import 'package:flutter_application_2/tabs/profile_tab.dart';
-import 'package:flutter_application_2/tabs/reservation_tab.dart';
+import 'package:flutter_application_2/src/features/presentations/tabs/explore_tab.dart';
+import 'package:flutter_application_2/src/features/presentations/tabs/myorder_tab.dart';
+import 'package:flutter_application_2/src/features/presentations/tabs/profile_tab.dart';
+import 'package:flutter_application_2/src/features/presentations/tabs/reservation_tab.dart';
 
 class TabsPage extends StatefulWidget {
   TabsPage({Key key}) : super(key: key);
