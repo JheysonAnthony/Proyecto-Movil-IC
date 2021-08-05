@@ -4,7 +4,7 @@ import 'package:flutter_application_2/src/colors/colors.dart';
 //UI
 import 'package:flutter/services.dart';
 //Widgets
-import 'package:flutter_application_2/src/features/presentations/widgets/back_button.dart';
+import 'package:flutter_application_2/src/features/presentations/common_widgets/back_button.dart';
 
 class LoginPage extends StatelessWidget {
   @override
@@ -19,7 +19,7 @@ class LoginPage extends StatelessWidget {
           children: [
             Image(
                 width: double.infinity,
-                height: 250.0,
+                height: 150.0,
                 fit: BoxFit.cover,
                 image: NetworkImage(
                     'https://i.pinimg.com/originals/04/37/41/04374193ab25aa58e70eca282f34ee7c.jpg')),
@@ -33,7 +33,7 @@ class LoginPage extends StatelessWidget {
           offset: Offset(0.0, -20.0),
           child: Container(
             width: double.infinity,
-            height: 300,
+            height: 442,
             decoration: BoxDecoration(
                 color: Colors.white, borderRadius: BorderRadius.circular(20.0)),
             child: Padding(
@@ -140,7 +140,7 @@ Widget _loginButton(BuildContext context) {
   return Container(
     width: 350.0,
     height: 45.0,
-    margin: EdgeInsets.only(top: 15.0),
+    margin: EdgeInsets.only(top: 40.0),
     child: RaisedButton(
       onPressed: () {
         Navigator.pushNamed(context, 'tabs');

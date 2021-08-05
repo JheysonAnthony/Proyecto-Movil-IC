@@ -1,8 +1,10 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-
-import 'login_page.dart';
+//CommonWidget
+import 'package:flutter_application_2/src/features/presentations/common_widgets/headerText.dart';
+//Page
+import '../../login_page/view/login_page.dart';
 
 class WelcomePage extends StatelessWidget {
   @override
@@ -29,11 +31,8 @@ class WelcomePage extends StatelessWidget {
           children: [
             Container(
               padding: EdgeInsets.symmetric(horizontal: 50.0),
-              child: Text('Restaurant "El Bitute Criollo"',
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 45.0)),
+              child: headerText('Restaurant "El Bitute Criollo"', Colors.white,
+                  FontWeight.bold, 45.0),
             ),
             Container(
               padding: EdgeInsets.symmetric(horizontal: 50.0, vertical: 30.0),

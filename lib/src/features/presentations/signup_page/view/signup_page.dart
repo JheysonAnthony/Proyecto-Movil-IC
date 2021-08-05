@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 //Colors
 import 'package:flutter_application_2/src/colors/colors.dart';
-
-//Backbutton
-import 'package:flutter_application_2/src/features/presentations/widgets/back_button.dart';
+//CommonWidgets
+import 'package:flutter_application_2/src/features/presentations/common_widgets/back_button.dart';
+import 'package:flutter_application_2/src/features/presentations/common_widgets/headerText.dart';
 
 class SignUpPage extends StatelessWidget {
   @override
@@ -20,15 +20,11 @@ class SignUpPage extends StatelessWidget {
       ),
       body: Center(
         child: Container(
-          padding: EdgeInsets.all(30),
+          padding: EdgeInsets.all(20),
           child: Column(
             children: [
-              Text('Registrarse',
-                  style: TextStyle(
-                    color: Theme.of(context).primaryColor,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 30.0,
-                  )),
+              headerText('Registrarse', Theme.of(context).primaryColor,
+                  FontWeight.bold, 30.0),
               _usernameInput(context),
               _emailInput(context),
               _phoneInput(context),
@@ -36,7 +32,8 @@ class SignUpPage extends StatelessWidget {
               _passwordInput(context),
               _signupButton(context),
               Container(
-                padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 40.0),
+                margin: EdgeInsets.only(top: 10),
+                padding: EdgeInsets.only(left: 20.0),
                 child: Text(
                   'Al hacer clic en Registrarse, acepta los siguientes Términos y Condiciones sin reservas',
                   textAlign: TextAlign.center,
@@ -56,7 +53,7 @@ class SignUpPage extends StatelessWidget {
 
 Widget _usernameInput(BuildContext context) {
   return Container(
-    margin: EdgeInsets.only(top: 40),
+    margin: EdgeInsets.only(top: 10),
     padding: EdgeInsets.only(left: 20.0),
     decoration: BoxDecoration(
         color: bgInputs, borderRadius: BorderRadius.circular(40.0)),
@@ -70,7 +67,7 @@ Widget _usernameInput(BuildContext context) {
 
 Widget _emailInput(BuildContext context) {
   return Container(
-    margin: EdgeInsets.only(top: 10),
+    margin: EdgeInsets.only(top: 5),
     padding: EdgeInsets.only(left: 20.0),
     decoration: BoxDecoration(
         color: bgInputs, borderRadius: BorderRadius.circular(40.0)),
@@ -84,7 +81,7 @@ Widget _emailInput(BuildContext context) {
 
 Widget _phoneInput(BuildContext context) {
   return Container(
-    margin: EdgeInsets.only(top: 10),
+    margin: EdgeInsets.only(top: 5),
     padding: EdgeInsets.only(left: 20.0),
     decoration: BoxDecoration(
         color: bgInputs, borderRadius: BorderRadius.circular(40.0)),
@@ -98,7 +95,7 @@ Widget _phoneInput(BuildContext context) {
 
 Widget _dateofbirthInput(BuildContext context) {
   return Container(
-    margin: EdgeInsets.only(top: 10),
+    margin: EdgeInsets.only(top: 5),
     padding: EdgeInsets.only(left: 20.0),
     decoration: BoxDecoration(
         color: bgInputs, borderRadius: BorderRadius.circular(40.0)),
@@ -112,7 +109,7 @@ Widget _dateofbirthInput(BuildContext context) {
 
 Widget _passwordInput(BuildContext context) {
   return Container(
-    margin: EdgeInsets.only(top: 10),
+    margin: EdgeInsets.only(top: 5),
     padding: EdgeInsets.only(left: 20.0),
     decoration: BoxDecoration(
         color: bgInputs, borderRadius: BorderRadius.circular(40.0)),
@@ -129,7 +126,7 @@ Widget _signupButton(BuildContext context) {
   return Container(
     width: 350.0,
     height: 45.0,
-    margin: EdgeInsets.only(top: 40.0),
+    margin: EdgeInsets.only(top: 10),
     child: RaisedButton(
       onPressed: () {},
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
