@@ -5,13 +5,13 @@ import 'package:flutter_application_2/src/colors/colors.dart';
 import 'package:flutter/services.dart';
 //Widgets
 import 'package:flutter_application_2/src/features/presentations/common_widgets/back_button.dart';
+import 'package:flutter_application_2/src/features/presentations/common_widgets/roundedButton.dart';
 
 class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     SystemChrome.setSystemUIOverlayStyle(
         SystemUiOverlayStyle.light.copyWith(statusBarColor: Colors.white));
-
     return Scaffold(
         body: Column(
       children: [
@@ -53,7 +53,12 @@ class LoginPage extends StatelessWidget {
                             fontSize: 15.0)),
                     _emailInput(),
                     _passwordInput(),
-                    _loginButton(context),
+                    roundedButton(
+                        color: orange,
+                        labelButton: 'Iniciar Sesión',
+                        func: () {
+                          Navigator.pushNamed(context, 'tabs');
+                        }),
                     Container(
                       margin: EdgeInsets.only(top: 30.0),
                       child: GestureDetector(
@@ -132,25 +137,6 @@ Widget _passwordInput() {
       decoration: InputDecoration(
           hintText: 'Contraseña',
           border: OutlineInputBorder(borderSide: BorderSide.none)),
-    ),
-  );
-}
-
-Widget _loginButton(BuildContext context) {
-  return Container(
-    width: 350.0,
-    height: 45.0,
-    margin: EdgeInsets.only(top: 40.0),
-    child: RaisedButton(
-      onPressed: () {
-        Navigator.pushNamed(context, 'tabs');
-      },
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
-      color: Theme.of(context).accentColor,
-      child: Text(
-        'Inicia sesión',
-        style: TextStyle(color: Colors.white, fontSize: 15.0),
-      ),
     ),
   );
 }

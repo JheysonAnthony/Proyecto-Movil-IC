@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_2/src/colors/colors.dart';
+//CommonWidgets
+import 'package:flutter_application_2/src/features/presentations/common_widgets/alertdialog.dart';
+import 'package:flutter_application_2/src/features/presentations/common_widgets/roundedButton.dart';
 
 //Tabs
 import 'package:flutter_application_2/src/features/presentations/tabs/explore_tab/view/explore_tab.dart';
@@ -14,6 +18,14 @@ class TabsPage extends StatefulWidget {
 }
 
 class _TabsPageState extends State<TabsPage> {
+  @override
+  void initState() {
+    super.initState();
+    Future.delayed(Duration.zero, () {
+      _requestLocation(context);
+    });
+  }
+
   List<Widget> _widgetOptions = [
     ExploreTab(),
     MyOrderTab(),
@@ -40,7 +52,7 @@ class _TabsPageState extends State<TabsPage> {
   Widget _bottomNavigationBar(BuildContext context) {
     return BottomNavigationBar(
         iconSize: 30.0,
-        selectedItemColor: Theme.of(context).accentColor,
+        selectedItemColor: orange,
         unselectedItemColor: Colors.grey,
         currentIndex: _selectedItemIndex,
         onTap: _changeWidget,
@@ -52,5 +64,15 @@ class _TabsPageState extends State<TabsPage> {
           BottomNavigationBarItem(icon: Icon(Icons.book), label: 'Reservas'),
           BottomNavigationBarItem(icon: Icon(Icons.person_pin), label: 'Perfil')
         ]);
+  }
+
+  Future _requestLocation(BuildContext context) async {
+    await showAlertDialog(
+        context,
+        AssetImage('images/localization.png'),
+        'Habilita tu ubicación',
+        "Permite usar tu ubicación para mostrar el restaurante en el mapa",
+        roundedButton(
+            color: orange, labelButton: 'Habilitar localización', func: () {}));
   }
 }

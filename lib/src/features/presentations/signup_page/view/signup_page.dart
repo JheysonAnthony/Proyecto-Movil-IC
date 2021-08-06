@@ -4,6 +4,7 @@ import 'package:flutter_application_2/src/colors/colors.dart';
 //CommonWidgets
 import 'package:flutter_application_2/src/features/presentations/common_widgets/back_button.dart';
 import 'package:flutter_application_2/src/features/presentations/common_widgets/headerText.dart';
+import 'package:flutter_application_2/src/features/presentations/common_widgets/roundedButton.dart';
 
 class SignUpPage extends StatelessWidget {
   @override
@@ -30,7 +31,8 @@ class SignUpPage extends StatelessWidget {
               _phoneInput(context),
               _dateofbirthInput(context),
               _passwordInput(context),
-              _signupButton(context),
+              roundedButton(
+                  color: orange, labelButton: 'Crear Cuenta', func: () {}),
               Container(
                 margin: EdgeInsets.only(top: 10),
                 padding: EdgeInsets.only(left: 20.0),
@@ -119,22 +121,5 @@ Widget _passwordInput(BuildContext context) {
         decoration: InputDecoration(
             hintText: 'Contraseña',
             border: OutlineInputBorder(borderSide: BorderSide.none))),
-  );
-}
-
-Widget _signupButton(BuildContext context) {
-  return Container(
-    width: 350.0,
-    height: 45.0,
-    margin: EdgeInsets.only(top: 10),
-    child: RaisedButton(
-      onPressed: () {},
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
-      color: Theme.of(context).accentColor,
-      child: Text(
-        'Crear cuenta',
-        style: TextStyle(color: Colors.white, fontSize: 17.0),
-      ),
-    ),
   );
 }

@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_2/src/colors/colors.dart';
+
 //CommonWidgets
 import 'package:flutter_application_2/src/features/presentations/common_widgets/back_button.dart';
+import 'package:flutter_application_2/src/features/presentations/common_widgets/roundedButton.dart';
 import 'package:flutter_application_2/src/features/presentations/common_widgets/headerText.dart';
+import 'package:flutter_application_2/src/features/presentations/common_widgets/alertdialog.dart';
 
 class ForgotPassword extends StatelessWidget {
   @override
@@ -32,7 +36,11 @@ class ForgotPassword extends StatelessWidget {
               ),
             ),
             _emailInput(),
-            _sendButton(context)
+            roundedButton(
+                context: context,
+                color: orange,
+                labelButton: 'Aceptar',
+                func: () => _showAlerta(context))
           ]),
         ),
       ),
@@ -56,80 +64,16 @@ Widget _emailInput() {
   );
 }
 
-Widget _sendButton(BuildContext context) {
-  return Container(
-    width: 350.0,
-    height: 45.0,
-    margin: EdgeInsets.only(top: 40.0),
-    child: RaisedButton(
-      onPressed: () {
-        _showAlerta(context);
-      },
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
-      color: Theme.of(context).accentColor,
-      child: Text(
-        'Enviar',
-        style: TextStyle(color: Colors.white, fontSize: 17.0),
-      ),
-    ),
-  );
-}
-
 void _showAlerta(BuildContext context) {
-  showDialog(
-      context: context,
-      barrierDismissible: true,
-      builder: (BuildContext context) {
-        return AlertDialog(
-          shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.all(Radius.circular(20.0))),
-          content: Container(
-            height: 400,
-            child: Column(
-              children: [
-                Image(
-                  image: AssetImage('images/forgotpassword.png'),
-                  width: 130,
-                  height: 130,
-                ),
-                Container(
-                  margin: EdgeInsets.all(15.0),
-                  child: headerText('Tu contraseña ha sido restablecida',
-                      Theme.of(context).primaryColor, FontWeight.bold, 20.0),
-                ),
-                Container(
-                  margin: EdgeInsets.all(15.0),
-                  child: Text(
-                    'En breve recibirá un correo electrónico con un código para configurar una nueva contraseña',
-                    style: TextStyle(
-                        color: Theme.of(context).primaryColor,
-                        fontWeight: FontWeight.w400,
-                        fontSize: 15.0),
-                  ),
-                ),
-                _doneButton(context)
-              ],
-            ),
-          ),
-        );
-      });
-}
-
-Widget _doneButton(BuildContext context) {
-  return Container(
-    width: 350.0,
-    height: 45.0,
-    margin: EdgeInsets.only(top: 40.0),
-    child: RaisedButton(
-      onPressed: () {
-        Navigator.pushNamed(context, 'login');
-      },
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
-      color: Theme.of(context).accentColor,
-      child: Text(
-        'Hecho',
-        style: TextStyle(color: Colors.white, fontSize: 17.0),
-      ),
-    ),
-  );
+  showAlertDialog(
+      context,
+      AssetImage('images/fpassword.png'),
+      'Tu contraseña ha sido reestablecida',
+      "En breve recibirá un correo electrónico con un codigo para configurar una nueva contraseña.",
+      roundedButton(
+          color: orange,
+          labelButton: 'Aceptar',
+          func: () {
+            Navigator.pushNamed(context, 'login');
+          }));
 }

@@ -1,10 +1,11 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+//Colors
+import 'package:flutter_application_2/src/colors/colors.dart';
 //CommonWidget
 import 'package:flutter_application_2/src/features/presentations/common_widgets/headerText.dart';
-//Page
-import '../../login_page/view/login_page.dart';
+import 'package:flutter_application_2/src/features/presentations/common_widgets/roundedButton.dart';
 
 class WelcomePage extends StatelessWidget {
   @override
@@ -43,51 +44,19 @@ class WelcomePage extends StatelessWidget {
                       fontWeight: FontWeight.w500,
                       fontSize: 17.0)),
             ),
-            Container(
-              width: 350.0,
-              height: 45.0,
-              margin: EdgeInsets.only(top: 40.0),
-              child: RaisedButton(
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => LoginPage()));
-                },
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(20.0)),
-                color: Theme.of(context).accentColor,
-                child: Text(
-                  'Inicia sesión',
-                  style: TextStyle(color: Colors.white, fontSize: 15.0),
-                ),
-              ),
+            roundedButton(
+              labelButton: 'Inicia sesión',
+              color: orange,
+              func: () {
+                Navigator.pushNamed(context, 'login');
+              },
             ),
-            Container(
-              width: 350.0,
-              height: 45.0,
-              margin: EdgeInsets.only(top: 20.0),
-              child: RaisedButton(
-                onPressed: () {},
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(20.0)),
-                color: Theme.of(context).buttonColor,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Image(
-                      image: AssetImage('images/facebook_logo_1.png'),
-                      width: 25.0,
-                      height: 25.0,
-                    ),
-                    Container(
-                      margin: EdgeInsets.only(left: 10.0),
-                      child: Text('Conéctate con Facebook',
-                          style:
-                              TextStyle(color: Colors.white, fontSize: 15.0)),
-                    )
-                  ],
-                ),
-              ),
-            )
+            roundedButton(
+                labelButton: 'Conéctate con Facebook',
+                color: fbColor,
+                isWhithIcon: true,
+                icon: AssetImage('images/facebook_logo_1.png'),
+                func: () => print("Hola"))
           ],
         )
       ],
