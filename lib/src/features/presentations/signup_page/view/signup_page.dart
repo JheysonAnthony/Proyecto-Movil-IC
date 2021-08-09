@@ -24,8 +24,10 @@ class SignUpPage extends StatelessWidget {
           padding: EdgeInsets.all(20),
           child: Column(
             children: [
-              headerText('Registrarse', Theme.of(context).primaryColor,
-                  FontWeight.bold, 30.0),
+              headerText(
+                  text: 'Registrarse',
+                  color: Theme.of(context).primaryColor,
+                  fontSize: 30.0),
               _usernameInput(context),
               _emailInput(context),
               _phoneInput(context),

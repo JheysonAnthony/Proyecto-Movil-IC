@@ -4,6 +4,7 @@ import 'package:flutter_application_2/src/colors/colors.dart';
 //Swiper
 import 'package:flutter_swiper/flutter_swiper.dart';
 //CommonWidget
+import 'package:flutter_application_2/src/features/presentations/common_widgets/firsttypeCard.dart';
 import 'package:flutter_application_2/src/features/presentations/common_widgets/headerText.dart';
 
 class ExploreTab extends StatelessWidget {
@@ -25,17 +26,29 @@ class ExploreTab extends StatelessWidget {
                       margin: EdgeInsets.symmetric(vertical: 20.0),
                       alignment: Alignment.centerLeft,
                       child: headerText(
-                          'Menú del día', Colors.black, FontWeight.bold, 30.0)),
+                          text: 'Menú del día',
+                          color: Colors.black,
+                          fontSize: 30.0)),
                   _sliderCards(),
                   _headers(context, "Platos a la carta", "Mostrar todo"),
-                  _extra(context,
+                  firstCard(
+                    image: NetworkImage(
+                        'https://images.unsplash.com/photo-1511690656952-34342bb7c2f2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80'),
+                    title: "Andys y Cindys diner",
+                    subtitle: "calle peerf sffgfsdhjsdfds",
+                    review: "4.5",
+                    rating: "(232 dsds)",
+                    buttonText: 'Delivery',
+                    hasActionButton: true,
+                  )
+                  /*_extra(context,
                       'https://images.unsplash.com/photo-1511690656952-34342bb7c2f2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80'),
                   _extra(context,
                       'https://images.unsplash.com/photo-1511690656952-34342bb7c2f2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80'),
                   _extra(context,
                       'https://images.unsplash.com/photo-1511690656952-34342bb7c2f2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80'),
                   _extra(context,
-                      'https://images.unsplash.com/photo-1511690656952-34342bb7c2f2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80')
+                      'https://images.unsplash.com/photo-1511690656952-34342bb7c2f2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80')*/
                 ],
               ),
             ),
@@ -65,7 +78,7 @@ Widget _topBar(BuildContext context) {
               color: gris,
             ),
             Text(
-              'search',
+              'Buscar',
               style: TextStyle(color: gris, fontSize: 17.0),
             )
           ],
@@ -179,7 +192,8 @@ Widget _headers(BuildContext context, String textHeader, String textAction) {
       Container(
         margin: EdgeInsets.only(left: 10.0),
         alignment: Alignment.centerLeft,
-        child: headerText(textHeader, Colors.black, FontWeight.bold, 20.0),
+        child:
+            headerText(text: textHeader, color: Colors.black, fontSize: 20.0),
       ),
       Spacer(),
       GestureDetector(
@@ -226,7 +240,9 @@ Widget _extra(BuildContext context, String foto) {
                   Container(
                       margin: EdgeInsets.symmetric(vertical: 7.0),
                       child: headerText(
-                          "sdsdsdsdsd", Colors.black, FontWeight.bold, 17.0)),
+                          text: "sdsdsdsdsd",
+                          color: Colors.black,
+                          fontSize: 17.0)),
                   Container(
                       alignment: Alignment.centerLeft,
                       margin: EdgeInsets.only(bottom: 5.0),

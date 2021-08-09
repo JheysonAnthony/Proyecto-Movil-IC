@@ -32,8 +32,10 @@ class WelcomePage extends StatelessWidget {
           children: [
             Container(
               padding: EdgeInsets.symmetric(horizontal: 50.0),
-              child: headerText('Restaurant "El Bitute Criollo"', Colors.white,
-                  FontWeight.bold, 45.0),
+              child: headerText(
+                  text: 'Restaurant "El Bitute Criollo"',
+                  color: Colors.white,
+                  fontSize: 45.0),
             ),
             Container(
               padding: EdgeInsets.symmetric(horizontal: 50.0, vertical: 30.0),
