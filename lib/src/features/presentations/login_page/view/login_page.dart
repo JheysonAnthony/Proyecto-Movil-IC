@@ -4,8 +4,8 @@ import 'package:flutter_application_2/src/colors/colors.dart';
 //UI
 import 'package:flutter/services.dart';
 //Widgets
-import 'package:flutter_application_2/src/features/presentations/common_widgets/back_button.dart';
-import 'package:flutter_application_2/src/features/presentations/common_widgets/roundedButton.dart';
+import 'package:flutter_application_2/src/features/presentations/common_widgets/backbuttons/back_button.dart';
+import 'package:flutter_application_2/src/features/presentations/common_widgets/buttons/roundedButton.dart';
 
 class LoginPage extends StatelessWidget {
   @override

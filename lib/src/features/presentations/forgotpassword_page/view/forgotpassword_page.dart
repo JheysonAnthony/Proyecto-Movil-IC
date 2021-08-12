@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_2/src/colors/colors.dart';
 
 //CommonWidgets
-import 'package:flutter_application_2/src/features/presentations/common_widgets/back_button.dart';
-import 'package:flutter_application_2/src/features/presentations/common_widgets/roundedButton.dart';
-import 'package:flutter_application_2/src/features/presentations/common_widgets/headerText.dart';
-import 'package:flutter_application_2/src/features/presentations/common_widgets/alertdialog.dart';
+import 'package:flutter_application_2/src/features/presentations/common_widgets/backbuttons/back_button.dart';
+import 'package:flutter_application_2/src/features/presentations/common_widgets/buttons/roundedButton.dart';
+import 'package:flutter_application_2/src/features/presentations/common_widgets/headers/headerText.dart';
+import 'package:flutter_application_2/src/features/presentations/common_widgets/alerts/alertdialog.dart';
 
 class ForgotPassword extends StatelessWidget {
   @override

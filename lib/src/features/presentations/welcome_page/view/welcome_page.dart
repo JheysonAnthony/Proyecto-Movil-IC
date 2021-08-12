@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 //Colors
 import 'package:flutter_application_2/src/colors/colors.dart';
 //CommonWidget
-import 'package:flutter_application_2/src/features/presentations/common_widgets/headerText.dart';
-import 'package:flutter_application_2/src/features/presentations/common_widgets/roundedButton.dart';
+import 'package:flutter_application_2/src/features/presentations/common_widgets/headers/headerText.dart';
+import 'package:flutter_application_2/src/features/presentations/common_widgets/buttons/roundedButton.dart';
 
 class WelcomePage extends StatelessWidget {
   @override

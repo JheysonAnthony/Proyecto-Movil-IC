@@ -15,6 +15,7 @@ class _CuisinesFilterState extends State<CuisinesFilter> {
   bool btnPizza = false;
   bool btnFastFood = false;
   bool btnVietname = false;
+  bool btnDesserts = false;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -26,13 +27,21 @@ class _CuisinesFilterState extends State<CuisinesFilter> {
               setState(() => btnAmerican = !btnAmerican);
             }, btnAmerican, 'Americana'),
             _roundedButtonFilter(() {
-              setState(() => btnAsia = !btnAsia);
-            }, btnAsia, 'Asiática'),
-            _roundedButtonFilter(() {
               setState(() => btnPizza = !btnPizza);
-            }, btnPizza, 'Pizzeria')
+            }, btnPizza, 'Pizzeria'),
+            _roundedButtonFilter(() {
+              setState(() => btnDesserts = !btnDesserts);
+            }, btnDesserts, 'Postres')
           ],
-        )
+        ),
+        Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
+          _roundedButtonFilter(() {
+            setState(() => btnFastFood = !btnFastFood);
+          }, btnFastFood, 'Comida Rápida'),
+          _roundedButtonFilter(() {
+            setState(() => btnAsia = !btnAsia);
+          }, btnAsia, 'Asiatica'),
+        ]),
       ],
     );
   }

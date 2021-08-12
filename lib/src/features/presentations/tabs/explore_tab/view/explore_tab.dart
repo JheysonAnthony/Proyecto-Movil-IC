@@ -4,8 +4,8 @@ import 'package:flutter_application_2/src/colors/colors.dart';
 //Swiper
 import 'package:flutter_swiper/flutter_swiper.dart';
 //CommonWidget
-import 'package:flutter_application_2/src/features/presentations/common_widgets/firsttypeCard.dart';
-import 'package:flutter_application_2/src/features/presentations/common_widgets/headerText.dart';
+import 'package:flutter_application_2/src/features/presentations/common_widgets/cards/firsttypeCard.dart';
+import 'package:flutter_application_2/src/features/presentations/common_widgets/headers/headerText.dart';
 
 class ExploreTab extends StatelessWidget {
   const ExploreTab({Key key}) : super(key: key);
@@ -40,15 +40,33 @@ class ExploreTab extends StatelessWidget {
                     rating: "(232 dsds)",
                     buttonText: 'Delivery',
                     hasActionButton: true,
-                  )
-                  /*_extra(context,
-                      'https://images.unsplash.com/photo-1511690656952-34342bb7c2f2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80'),
-                  _extra(context,
-                      'https://images.unsplash.com/photo-1511690656952-34342bb7c2f2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80'),
-                  _extra(context,
-                      'https://images.unsplash.com/photo-1511690656952-34342bb7c2f2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80'),
-                  _extra(context,
-                      'https://images.unsplash.com/photo-1511690656952-34342bb7c2f2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80')*/
+                  ),
+                  firstCard(
+                    image: NetworkImage(
+                        'https://images.unsplash.com/photo-1511690656952-34342bb7c2f2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80'),
+                    title: "Andys y Cindys diner",
+                    subtitle: "calle peerf sffgfsdhjsdfds",
+                    review: "4.5",
+                    rating: "(232 dsds)",
+                    buttonText: 'Delivery',
+                    hasActionButton: true,
+                  ),
+                  firstCard(
+                    image: NetworkImage(
+                        'https://images.unsplash.com/photo-1511690656952-34342bb7c2f2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80'),
+                    title: "Andys y Cindys diner",
+                    subtitle: "calle peerf sffgfsdhjsdfds",
+                    review: "4.5",
+                    rating: "(232 dsds)",
+                    buttonText: 'Delivery',
+                    hasActionButton: true,
+                  ),
+                  GestureDetector(
+                      onTap: () {
+                        Navigator.pushNamed(context, 'collection');
+                      },
+                      child: _headers(context, "Colecciones", "Mostrar todo")),
+                  _sliderCollection()
                 ],
               ),
             ),
@@ -123,70 +141,75 @@ Widget _sliderCards() {
 }
 
 Widget _card(BuildContext context) {
-  return Container(
-      margin: EdgeInsets.all(10.0),
-      child: Column(
-        children: [
-          ClipRRect(
-            borderRadius: BorderRadius.circular(20),
-            child: Image(
-                width: 200.0,
-                height: 250.0,
-                fit: BoxFit.cover,
-                image: NetworkImage(
-                    'https://images.unsplash.com/photo-1511690656952-34342bb7c2f2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80')),
-          ),
-          Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-            Container(
-              margin: EdgeInsets.only(top: 10.0),
-              child: Text("Andy & Cindy ffsffsdfs",
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 17.0)),
+  return GestureDetector(
+    onTap: () {
+      Navigator.pushNamed(context, 'placedetail');
+    },
+    child: Container(
+        margin: EdgeInsets.all(10.0),
+        child: Column(
+          children: [
+            ClipRRect(
+              borderRadius: BorderRadius.circular(20),
+              child: Image(
+                  width: 200.0,
+                  height: 250.0,
+                  fit: BoxFit.cover,
+                  image: NetworkImage(
+                      'https://images.unsplash.com/photo-1511690656952-34342bb7c2f2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80')),
             ),
-            Container(
-              alignment: Alignment.centerLeft,
-              child: Text("Andy & Cindy",
-                  style: TextStyle(
-                      color: Theme.of(context).disabledColor,
-                      fontWeight: FontWeight.w500,
-                      fontSize: 13.0)),
-            ),
-            Row(
-              children: [
-                Icon(Icons.star, color: amarillo, size: 16),
-                Text("4.8",
+            Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+              Container(
+                margin: EdgeInsets.only(top: 10.0),
+                child: Text("Andy & Cindy ffsffsdfs",
                     style: TextStyle(
                         color: Colors.black,
-                        fontWeight: FontWeight.w500,
-                        fontSize: 13.0)),
-                Text("(233 tairifn)",
+                        fontWeight: FontWeight.bold,
+                        fontSize: 17.0)),
+              ),
+              Container(
+                alignment: Alignment.centerLeft,
+                child: Text("Andy & Cindy",
                     style: TextStyle(
-                        color: gris,
+                        color: Theme.of(context).disabledColor,
                         fontWeight: FontWeight.w500,
                         fontSize: 13.0)),
-                Container(
-                  margin: EdgeInsets.symmetric(horizontal: 5.0),
-                  width: 80.0,
-                  height: 18.0,
-                  child: RaisedButton(
-                    elevation: 0.5,
-                    shape: StadiumBorder(),
-                    color: Theme.of(context).accentColor,
-                    textColor: Colors.white,
-                    onPressed: () {},
-                    child: Text(
-                      'delivery',
-                      style: TextStyle(fontSize: 11.0),
+              ),
+              Row(
+                children: [
+                  Icon(Icons.star, color: amarillo, size: 16),
+                  Text("4.8",
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontWeight: FontWeight.w500,
+                          fontSize: 13.0)),
+                  Text("(233 tairifn)",
+                      style: TextStyle(
+                          color: gris,
+                          fontWeight: FontWeight.w500,
+                          fontSize: 13.0)),
+                  Container(
+                    margin: EdgeInsets.symmetric(horizontal: 5.0),
+                    width: 80.0,
+                    height: 18.0,
+                    child: RaisedButton(
+                      elevation: 0.5,
+                      shape: StadiumBorder(),
+                      color: Theme.of(context).accentColor,
+                      textColor: Colors.white,
+                      onPressed: () {},
+                      child: Text(
+                        'delivery',
+                        style: TextStyle(fontSize: 11.0),
+                      ),
                     ),
-                  ),
-                )
-              ],
-            )
-          ])
-        ],
-      ));
+                  )
+                ],
+              )
+            ])
+          ],
+        )),
+  );
 }
 
 Widget _headers(BuildContext context, String textHeader, String textAction) {
@@ -217,86 +240,40 @@ Widget _headers(BuildContext context, String textHeader, String textAction) {
   );
 }
 
-Widget _extra(BuildContext context, String foto) {
-  return Column(
-    children: [
-      Container(
-        margin: EdgeInsets.only(left: 10.0),
-        padding: EdgeInsets.symmetric(vertical: 10),
-        child: Row(
-          children: [
-            ClipRRect(
-              borderRadius: BorderRadius.circular(10),
-              child: Image(
-                width: 80,
-                height: 80,
-                fit: BoxFit.cover,
-                image: NetworkImage(foto),
-              ),
-            ),
-            Container(
-              padding: EdgeInsets.only(left: 20.0),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Container(
-                      margin: EdgeInsets.symmetric(vertical: 7.0),
-                      child: headerText(
-                          text: "sdsdsdsdsd",
-                          color: Colors.black,
-                          fontSize: 17.0)),
-                  Container(
-                      alignment: Alignment.centerLeft,
-                      margin: EdgeInsets.only(bottom: 5.0),
-                      child: Text("fdsfdsfsdfsfsdf",
-                          style: TextStyle(
-                              color: gris,
-                              fontWeight: FontWeight.w500,
-                              fontSize: 13.0))),
-                  Row(
-                    children: [
-                      Icon(Icons.star, color: amarillo, size: 16.0),
-                      Text(
-                        "4.5",
-                        style: TextStyle(
-                            color: Colors.black,
-                            fontWeight: FontWeight.w500,
-                            fontSize: 13.0),
-                      ),
-                      Container(
-                        margin: EdgeInsets.only(left: 5.0),
-                        child: Text(
-                          "fwfwfwfffwaf",
-                          style: TextStyle(
-                              color: Colors.black,
-                              fontWeight: FontWeight.w500,
-                              fontSize: 13.0),
-                        ),
-                      ),
-                      Container(
-                          margin: EdgeInsets.only(left: 25.0),
-                          width: 100.0,
-                          height: 18.0,
-                          child: RaisedButton(
-                            elevation: 0.5,
-                            shape: StadiumBorder(),
-                            color: Theme.of(context).accentColor,
-                            onPressed: () {},
-                            child: Text(
-                              "sdadasd",
-                              style: TextStyle(
-                                  fontSize: 11.0, color: Colors.white),
-                            ),
-                          ))
-                    ],
-                  )
-                ],
-              ),
-            )
-          ],
-        ),
-      )
-    ],
+Widget _sliderCollection() {
+  return Container(
+    height: 180.0,
+    child: Swiper(
+        itemCount: 4,
+        layout: SwiperLayout.DEFAULT,
+        itemBuilder: (BuildContext context, int index) {
+          return ListView.builder(
+            scrollDirection: Axis.horizontal,
+            itemBuilder: (BuildContext context, int index) {
+              return _cardCollection(context);
+            },
+          );
+        }),
+  );
+}
+
+Widget _cardCollection(BuildContext context) {
+  return Container(
+    margin: EdgeInsets.all(10.0),
+    child: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        ClipRRect(
+          borderRadius: BorderRadius.circular(20.0),
+          child: Image(
+            width: 300,
+            height: 150,
+            fit: BoxFit.cover,
+            image: NetworkImage(
+                'https://images.unsplash.com/photo-1511690656952-34342bb7c2f2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80'),
+          ),
+        )
+      ],
+    ),
   );
 }

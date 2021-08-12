@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_2/src/colors/colors.dart';
-import 'package:flutter_application_2/src/features/presentations/common_widgets/headerText.dart';
+import 'package:flutter_application_2/src/features/presentations/common_widgets/headers/headerText.dart';
 
 Widget headerdoubleText(
     {String headermText, String actionText, Function func}) {

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 //Header Text
-import 'package:flutter_application_2/src/features/presentations/common_widgets/headerText.dart';
+import 'package:flutter_application_2/src/features/presentations/common_widgets/headers/headerText.dart';
 
 Future showAlertDialog(BuildContext context, ImageProvider<Object> imagePath,
     String headerTitle, String headerSubTitle, Widget doneButton) async {

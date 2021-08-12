@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 //Colors
 import 'package:flutter_application_2/src/colors/colors.dart';
 //CommonWidgets
-import 'package:flutter_application_2/src/features/presentations/common_widgets/headerText.dart';
-import 'package:flutter_application_2/src/features/presentations/common_widgets/headerdouble.dart';
-import 'package:flutter_application_2/src/features/presentations/common_widgets/verticalCard.dart';
-import 'package:flutter_application_2/src/features/presentations/common_widgets/firsttypeCard.dart';
+import 'package:flutter_application_2/src/features/presentations/common_widgets/headers/headerText.dart';
+import 'package:flutter_application_2/src/features/presentations/common_widgets/headers/headerdouble.dart';
+import 'package:flutter_application_2/src/features/presentations/common_widgets/cards/verticalCard.dart';
+import 'package:flutter_application_2/src/features/presentations/common_widgets/cards/firsttypeCard.dart';
 //Swiper
 import 'package:flutter_swiper/flutter_swiper.dart';
 

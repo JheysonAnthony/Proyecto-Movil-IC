@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_2/src/colors/colors.dart';
 //CommonWidgets
-import 'package:flutter_application_2/src/features/presentations/common_widgets/alertdialog.dart';
-import 'package:flutter_application_2/src/features/presentations/common_widgets/roundedButton.dart';
+import 'package:flutter_application_2/src/features/presentations/common_widgets/alerts/alertdialog.dart';
+import 'package:flutter_application_2/src/features/presentations/common_widgets/buttons/roundedButton.dart';
 
 //Tabs
 import 'package:flutter_application_2/src/features/presentations/tabs/explore_tab/view/explore_tab.dart';
